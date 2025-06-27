@@ -99,6 +99,11 @@ Access previous versions of data using timestamps or version numbers. Reproduce 
 
 Time travel is a feature in Delta Lake that lets you query data as it existed at a specific point in time or at a specific version. Because Delta Lake keeps a transaction log of every change, you can easily go back and view or restore previous states of your data.
 
+---
+
+📖 [Read the full detailed blog here](https://medium.com/@neeldrji/databricks-sparksql-bfe0af2e47da)
+
+
 
 
 
