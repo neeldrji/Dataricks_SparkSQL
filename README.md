@@ -25,7 +25,6 @@ The snapshot below illustrates how I created an external table in the Catalog. T
 
 ## 2. 🏗️ Catalog, Schema & Table Setup
 - Created Catalogs and Schemas in Databricks.
-- Built external and managed tables using Spark SQL.
 
 ![Screenshot 2025-06-26 184137](https://github.com/user-attachments/assets/02991b8e-9933-4240-b31c-ca7583808e76)
 
@@ -33,8 +32,11 @@ The snapshot below illustrates how I created an external table in the Catalog. T
 - load data as DataFrames.
 - Created temporary views and global temporary views.
 - Understood the difference between external tables, managed tables.
+- Built external and managed tables using Spark SQL.
 
-The key difference between creating a managed table and an external table is specifying the storage location during table creation.\
+
+The key difference between creating a managed table and an external table is specifying the storage location during table creation.
+
 #### External Table:-
 ![Screenshot 2025-06-26 184529](https://github.com/user-attachments/assets/1079cfc2-1d71-4964-83eb-479d83f9d696)
 
@@ -72,7 +74,9 @@ Explored when and where to use each type effectively.
 
 
 ## 7. 🧩 Row-Level Security (RLS)
-- Implemented row-level filtering in Spark SQL using: Security groups & Mapping table
+- Implemented row-level filtering in Spark SQL using: Security groups & Mapping table\
+  
+To achieve row-level security, I created a mapping table (or access-control list). A comprehensive mapping table encodes which data rows in the original table are accessible to certain users or groups. Mapping tables are useful because they offer simple integration with your fact tables through direct joins.
 
 ## 8. 🔁 Delta Lake & Time Travel
 Introduced Delta Lake to the project.
@@ -82,7 +86,8 @@ Learned about:
 - Time travel
 - Rollback and audit-friendly queries
 
-Performed operations using VERSION AS OF and TIMESTAMP AS OF.
+Data versioning is the ability to track and manage different versions of a dataset over time. In Delta Lake (used in Databricks), every change to a table, whether it's an insert, update, delete, or schema change is recorded as a new version in the transaction log.\
+Access previous versions of data using timestamps or version numbers. Reproduce historical reports based on how the data looked at a specific point in time. Recover from accidental changes or deletions and Audit data changes for compliance or debugging
 
 #### Data versioning:-
 ![image](https://github.com/user-attachments/assets/e2545f0f-d2b5-483b-8721-166f127bf8aa)
@@ -90,6 +95,9 @@ Performed operations using VERSION AS OF and TIMESTAMP AS OF.
 
 #### Time travel:-
 ![image](https://github.com/user-attachments/assets/453cc307-e4f3-46bd-85e4-9e5f60762ac9)
+
+
+Time travel is a feature in Delta Lake that lets you query data as it existed at a specific point in time or at a specific version. Because Delta Lake keeps a transaction log of every change, you can easily go back and view or restore previous states of your data.
 
 
 
